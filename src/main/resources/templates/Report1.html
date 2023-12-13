@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/find-candidate/{company}}" >
+    <input type="text" name="company">
+    <button type="submit">Submit</button>
+</form>
+<div th:if="${candidates}">
+    <h2>Search Results:</h2>
+    <ul>
+        <li th:each="candidate : ${candidates}">
+            <p th:text="${candidate.fullName}"></p>
+            <p th:text="${candidate.phone}"></p>
+            <p th:text="${candidate.email}"></p>
+            <!-- Các thông tin khác của Candidate -->
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

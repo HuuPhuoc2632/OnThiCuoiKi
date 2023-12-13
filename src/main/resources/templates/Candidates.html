@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                full name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:object="${candidates}" th:each="candidate : ${candidates}">
+            <td th:text="${candidate.id}">
+            </td>
+            <td th:text="${candidate.fullName}">
+            </td>
+            <td>
+                <a th:href="@{/detail/{id} (id=${candidate.id})}">Detail</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
